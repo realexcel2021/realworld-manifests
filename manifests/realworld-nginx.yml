@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: realworld-deploy
+  name: realworld-nginx
 spec:
   selector:
     matchLabels:
-      app: realworld
+      app: realworld-nginx
   template:
     metadata:
       labels:
-        app: realworld
+        app: realworld-nginx
     spec:
       containers:
       - name: realworld
@@ -22,11 +22,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: realworld
+  name: realworld-nginx-svc
 spec:
   type: LoadBalancer
   selector:
-    app: realworld
+    app: realworld-nginx
   ports:
     - protocol: TCP
       port: 80
