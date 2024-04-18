@@ -34,7 +34,7 @@ spec:
               key: POSTGRES_PASSWORD
 
         - name: DB_HOST
-          value: "postgres"
+          value: "postgres.default.svc.cluster.local"
 
         - name: DB_PORT
           value: "5432"
